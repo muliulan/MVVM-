@@ -1,6 +1,7 @@
-package com.a.a.a.library_base.http;
+package com.library_base.http;
 
-import com.a.a.a.library_base.Constants;
+
+import com.library_base.Constants;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.request.GetRequest;
 import com.lzy.okgo.request.PostRequest;

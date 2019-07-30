@@ -3,7 +3,8 @@ package com.module_main;
 import android.app.Application;
 import android.util.Log;
 
-import com.a.a.a.library_base.IModuleInit;
+import com.library_base.IModuleInit;
+
 
 /**
  * Created by Administrator on 2019/7/24 0024.

@@ -3,12 +3,12 @@ package com.module_main.v;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
-import com.a.a.a.library_base.arouter.RouterPath;
-import com.a.a.a.library_base.mvvm.BaseActivity;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
+import com.library_base.arouter.RouterPath;
+import com.library_base.mvvm.BaseActivity;
 import com.module_main.R;
 import com.module_main.TabEntity;
 import com.module_main.databinding.ActivityMainBinding;

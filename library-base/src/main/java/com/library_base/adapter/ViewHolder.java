@@ -1,4 +1,4 @@
-package com.a.a.a.library_base.adapter;
+package com.library_base.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

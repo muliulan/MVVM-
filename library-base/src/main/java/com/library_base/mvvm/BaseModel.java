@@ -1,8 +1,8 @@
-package com.a.a.a.library_base.mvvm;
+package com.library_base.mvvm;
 
-import com.a.a.a.library_base.Constants;
-import com.a.a.a.library_base.http.HttpCallback;
 import com.alibaba.fastjson.JSON;
+import com.library_base.Constants;
+import com.library_base.http.HttpCallback;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.request.GetRequest;
 import com.lzy.okgo.request.PostRequest;
@@ -14,11 +14,11 @@ import java.util.Map;
  * Created by Administrator on 2019/7/18 0018.
  */
 
-public class BaseModel implements IModel{
+public class BaseModel implements   IModel {
 
-    public IBaseViewModel mViewModel;
+    public  IBaseViewModel mViewModel;
 
-    public BaseModel(IBaseViewModel mViewModel){
+    public BaseModel(    IBaseViewModel mViewModel){
         this.mViewModel=mViewModel;
     }
 

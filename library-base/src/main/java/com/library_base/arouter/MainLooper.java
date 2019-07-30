@@ -1,4 +1,4 @@
-package com.a.a.a.library_base.arouter;
+package com.library_base.arouter;
 
 import android.os.Looper;
 

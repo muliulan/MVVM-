@@ -3,7 +3,7 @@ package com.module_main.vm;
 import android.app.Application;
 import android.support.annotation.NonNull;
 
-import com.a.a.a.library_base.mvvm.BaseViewModel;
+import com.library_base.mvvm.BaseViewModel;
 import com.module_main.m.MainModel;
 
 

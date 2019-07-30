@@ -1,4 +1,4 @@
-package com.a.a.a.library_base.http;
+package com.library_base.http;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;

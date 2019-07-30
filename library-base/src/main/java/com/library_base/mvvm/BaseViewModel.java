@@ -1,4 +1,4 @@
-package com.a.a.a.library_base.mvvm;
+package com.library_base.mvvm;
 
 import android.app.Activity;
 import android.app.Application;
@@ -12,7 +12,7 @@ import android.support.annotation.NonNull;
  * Created by Administrator on 2019/7/16 0016.
  */
 
-public abstract class BaseViewModel<M extends BaseModel> extends AndroidViewModel implements IBaseViewModel {
+public abstract class BaseViewModel<M extends BaseModel> extends AndroidViewModel implements    IBaseViewModel {
 
     protected abstract M onInitModel();
     protected abstract void onInit();

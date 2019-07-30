@@ -1,4 +1,4 @@
-package com.a.a.a.library_base.http;
+package com.library_base.http;
 
 import com.lzy.okgo.request.base.Request;
 
@@ -65,7 +65,7 @@ public abstract class JsonCallback<T> extends com.lzy.okgo.callback.AbsCallback<
             }
         }
 
-        JsonConvert<T> convert = new JsonConvert<>(type);
+       JsonConvert<T> convert = new JsonConvert<>(type);
         return convert.convertResponse(response);
     }
 }

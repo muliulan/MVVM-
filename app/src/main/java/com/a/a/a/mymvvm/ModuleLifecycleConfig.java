@@ -3,7 +3,8 @@ package com.a.a.a.mymvvm;
 import android.app.Application;
 import android.support.annotation.Nullable;
 
-import com.a.a.a.library_base.IModuleInit;
+import com.library_base.IModuleInit;
+
 
 /**
  * Created by Administrator on 2019/7/24 0024.

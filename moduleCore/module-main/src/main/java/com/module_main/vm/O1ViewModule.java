@@ -4,14 +4,14 @@ import android.app.Application;
 import android.databinding.ObservableField;
 import android.support.annotation.NonNull;
 
-import com.a.a.a.library_base.mvvm.BaseViewModel;
+import com.library_base.mvvm.BaseViewModel;
 import com.module_main.m.MainModel;
 
 /**
  * Created by Administrator on 2019/7/25 0025.
  */
 
-public class O1ViewModule extends BaseViewModel<MainModel>{
+public class O1ViewModule extends BaseViewModel<MainModel> {
 
     public ObservableField<String> userName = new ObservableField<>("");
 

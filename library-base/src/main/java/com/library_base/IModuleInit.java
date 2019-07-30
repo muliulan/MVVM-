@@ -1,4 +1,4 @@
-package com.a.a.a.library_base;
+package com.library_base;
 
 import android.app.Application;
 

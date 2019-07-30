@@ -8,8 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.a.a.a.library_base.arouter.RouterPath;
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.library_base.arouter.RouterPath;
 import com.module_main.R;
 
 /**

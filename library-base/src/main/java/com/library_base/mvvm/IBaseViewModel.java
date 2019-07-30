@@ -1,4 +1,4 @@
-package com.a.a.a.library_base.mvvm;
+package com.library_base.mvvm;
 
 import android.app.Activity;
 import android.arch.lifecycle.Lifecycle;

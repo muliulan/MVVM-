@@ -1,4 +1,4 @@
-package com.a.a.a.library_base.mvvm;
+package com.library_base.mvvm;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModel;
@@ -21,7 +21,7 @@ import java.lang.reflect.Type;
  * Created by Administrator on 2019/7/25 0025.
  */
 
-public abstract class BaseFragment<V extends ViewDataBinding,VM extends BaseViewModel> extends Fragment{
+public abstract class BaseFragment<V extends ViewDataBinding,VM extends  BaseViewModel> extends Fragment{
 
     protected abstract int initContentView();
     protected abstract void initView(Bundle savedInstanceState);
@@ -62,7 +62,7 @@ public abstract class BaseFragment<V extends ViewDataBinding,VM extends BaseView
                 modelClass = (Class) ((ParameterizedType) type).getActualTypeArguments()[1];
             } else {
                 //如果没有指定泛型参数，则默认使用BaseViewModel
-                modelClass = BaseViewModel.class;
+                modelClass =  BaseViewModel.class;
             }
             mViewModel = (VM) createViewModel(this, modelClass);
         }

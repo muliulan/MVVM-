@@ -22,14 +22,14 @@
          android:id="@+id/tl_1"
          android:layout_width="match_parent"
          android:layout_height="54dp"
-         android:background="#ffffff"
+         android:background="#C29446"
          tl:tl_iconHeight="23dp"
          tl:tl_iconWidth="23dp"
          tl:tl_indicator_color="#2C97DE"
          tl:tl_indicator_height="0dp"
          tl:tl_textSelectColor="#2C97DE"
          tl:tl_textUnselectColor="#66000000"
-        />
+         tl:tl_textsize="12sp"/>
  </RelativeLayout>
 
 </layout>

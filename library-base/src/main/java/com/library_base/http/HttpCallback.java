@@ -1,4 +1,4 @@
-package com.a.a.a.library_base.http;
+package com.library_base.http;
 
 import android.app.Activity;
 import android.app.ProgressDialog;

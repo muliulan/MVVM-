@@ -1,4 +1,4 @@
-package com.a.a.a.library_base;
+package com.library_base;
 
 /**
  * Created by Administrator on 2019/5/16 0016.

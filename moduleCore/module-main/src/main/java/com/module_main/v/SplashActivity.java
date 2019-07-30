@@ -3,9 +3,9 @@ package com.module_main.v;
 import android.os.Bundle;
 import android.view.View;
 
-import com.a.a.a.library_base.arouter.RouterPath;
-import com.a.a.a.library_base.mvvm.BaseActivity;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.library_base.arouter.RouterPath;
+import com.library_base.mvvm.BaseActivity;
 import com.module_main.R;
 import com.module_main.databinding.ActivitySplasBinding;
 import com.module_main.vm.SplashViewModel;
@@ -15,6 +15,7 @@ import com.module_main.vm.SplashViewModel;
  */
 
 public class SplashActivity extends BaseActivity<ActivitySplasBinding,SplashViewModel> {
+
     @Override
     protected int initContentView() {
         return R.layout.activity_splas;
@@ -25,7 +26,8 @@ public class SplashActivity extends BaseActivity<ActivitySplasBinding,SplashView
         mBinding.text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ARouter.getInstance().build(RouterPath.Login.LOGIN).navigation();
+                ARouter.getInstance().build(RouterPath.Login.LOGIN).withString("q1", "1111")
+                        .withString("q2", "888").navigation();
                 finish();
             }
         });

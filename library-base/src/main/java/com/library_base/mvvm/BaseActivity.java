@@ -1,4 +1,4 @@
-package com.a.a.a.library_base.mvvm;
+package com.library_base.mvvm;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModel;
@@ -19,7 +19,7 @@ import java.lang.reflect.Type;
  * Created by Administrator on 2019/7/16 0016.
  */
 
-public abstract class BaseActivity<V extends ViewDataBinding,VM extends BaseViewModel> extends AppCompatActivity {
+public abstract class BaseActivity<V extends ViewDataBinding,VM extends   BaseViewModel> extends AppCompatActivity {
 
     protected abstract int initContentView();
     protected abstract void initView(Bundle savedInstanceState);
@@ -31,10 +31,11 @@ public abstract class BaseActivity<V extends ViewDataBinding,VM extends BaseView
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        ARouter.getInstance().inject(this);
         initDataBinding();
         initViewModel();
         initView(savedInstanceState);
-        ARouter.getInstance().inject(this);
+
     }
     private void initDataBinding() {
         mBinding = DataBindingUtil.setContentView(this, initContentView());
@@ -48,7 +49,7 @@ public abstract class BaseActivity<V extends ViewDataBinding,VM extends BaseView
                 modelClass = (Class) ((ParameterizedType) type).getActualTypeArguments()[1];
             } else {
                 //如果没有指定泛型参数，则默认使用BaseViewModel
-                modelClass = BaseViewModel.class;
+                modelClass =   BaseViewModel.class;
             }
             mViewModel = (VM) createViewModel(this, modelClass);
         }

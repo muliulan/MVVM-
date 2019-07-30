@@ -5,7 +5,7 @@ package com.a.a.a.mymvvm;
  */
 
 public class ModuleLifecycleReflexs {
-    private static final String BaseInit = "com.a.a.a.library_base.BaseModuleInit";
+    private static final String BaseInit = "com.library_base.BaseModuleInit";
     //主业务模块
     private static final String MainInit = "com.module_main.MainModuleInit";
 
