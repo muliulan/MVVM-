@@ -22,17 +22,11 @@ public class SplashActivity extends BaseActivity<ActivitySplasBinding,SplashView
 
     @Override
     protected void initView(Bundle savedInstanceState) {
-
-//        Fragment navigation = (Fragment) ARouter.getInstance().build(RouterPath.Main.O1).navigation();
-//        if(navigation==null){
-//            Log.e("mlll","buweinull");
-//
-//        }
         mBinding.text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ARouter.getInstance().build(RouterPath.Login.LOGIN).navigation();
-//                finish();
+                finish();
             }
         });
 

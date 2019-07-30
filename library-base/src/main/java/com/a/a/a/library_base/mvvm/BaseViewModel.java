@@ -14,6 +14,7 @@ import android.support.annotation.NonNull;
 
 public abstract class BaseViewModel<M extends BaseModel> extends AndroidViewModel implements IBaseViewModel {
 
+    protected abstract M onInitModel();
     protected abstract void onInit();
     protected M mModel;
     public MutableLiveData mLivedata;
@@ -31,8 +32,13 @@ public abstract class BaseViewModel<M extends BaseModel> extends AndroidViewMode
         }
         return mLivedata;
     }
+
     public void setActivity(BaseActivity ma){
         this.mActivity=ma;
+    }
+
+    public void setActivity(BaseFragment fragment){
+        this.mActivity=(BaseActivity)fragment.getActivity();
     }
 
     @Override
@@ -41,6 +47,7 @@ public abstract class BaseViewModel<M extends BaseModel> extends AndroidViewMode
 
     @Override
     public void onCreate() {
+        mModel=onInitModel();
         onInit();
     }
 

@@ -14,10 +14,10 @@ import com.lzy.okgo.request.base.Request;
 public class HttpCallback<T> extends JsonCallback<T> {
 
     private ProgressDialog dialog;
-
+    private Activity activity;
     public HttpCallback(Activity activity) {
         super();
-        initDialog(activity);
+        this.activity=activity;
     }
 
     private void initDialog(Activity activity) {
@@ -32,6 +32,8 @@ public class HttpCallback<T> extends JsonCallback<T> {
     public void onStart(Request<T, ? extends Request> request) {
         if (dialog != null && !dialog.isShowing()) {
             dialog.show();
+        }else{
+            initDialog(activity);
         }
     }
 

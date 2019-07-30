@@ -2,7 +2,6 @@ package com.module_main.v;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 
 import com.a.a.a.library_base.arouter.RouterPath;
 import com.a.a.a.library_base.mvvm.BaseActivity;
@@ -62,7 +61,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding,MainViewModel
 
     @Override
     protected void data(Object data) {
-        Log.e("mll",data.toString());
 
     }
 }

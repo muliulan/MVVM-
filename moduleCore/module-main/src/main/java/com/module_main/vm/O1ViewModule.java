@@ -1,38 +1,36 @@
 package com.module_main.vm;
 
 import android.app.Application;
+import android.databinding.ObservableField;
 import android.support.annotation.NonNull;
 
 import com.a.a.a.library_base.mvvm.BaseViewModel;
 import com.module_main.m.MainModel;
 
-
 /**
- * Created by Administrator on 2019/7/16 0016.
+ * Created by Administrator on 2019/7/25 0025.
  */
 
-public class MainViewModel extends BaseViewModel<MainModel> {
+public class O1ViewModule extends BaseViewModel<MainModel>{
 
-    public MainViewModel(@NonNull Application application) {
+    public ObservableField<String> userName = new ObservableField<>("");
+
+    public O1ViewModule(@NonNull Application application) {
         super(application);
     }
 
     @Override
     protected MainModel onInitModel() {
-        return  null;
+        return  new MainModel(this);
     }
 
     @Override
     protected void onInit() {
-//        mModel.onHttp();
+        mModel.onHttp();
     }
-
 
     @Override
     public void onHttpData(Object data) {
-//        mLivedata.setValue(data);
-//        if(data instanceof String){
-//            userName.set((String)data);
-//        }
+        userName.set((String) data);
     }
 }
