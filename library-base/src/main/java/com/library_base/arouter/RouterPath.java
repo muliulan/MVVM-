@@ -19,4 +19,8 @@ public class RouterPath {
         private static final String L = "/login";
         public static final String LOGIN = L+"/login";
     }
+    public static class Hfive{
+        private static final String H = "/hfive";
+        public static final String Hfive = H+"/hfive";
+    }
 }

@@ -6,14 +6,13 @@ if (isBuildModule.toBoolean()) {
     apply plugin: 'com.android.library'
 }
 android {
-    def m_android = rootProject.ext.android
-    compileSdkVersion m_android.compileSdkVersion
-    buildToolsVersion m_android.buildToolsVersion
+    compileSdkVersion       rootProject.ext.android.compileSdkVersion
+    buildToolsVersion       rootProject.ext.android.buildToolsVersion
     defaultConfig {
-        minSdkVersion m_android.minSdkVersion
-        targetSdkVersion m_android.targetSdkVersion
-        versionCode m_android.versionCode
-        versionName m_android.versionName
+        minSdkVersion       rootProject.ext.android.minSdkVersion
+        targetSdkVersion    rootProject.ext.android.targetSdkVersion
+        versionCode         rootProject.ext.android.versionCode
+        versionName         rootProject.ext.android.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         //阿里路由框架配置
         javaCompileOptions {
@@ -53,7 +52,8 @@ android {
     }
 }
 dependencies{
-    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    annotationProcessor rootProject.ext.dependencies["arouter_compiler"]
 }
 
 

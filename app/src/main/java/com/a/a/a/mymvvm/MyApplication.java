@@ -1,6 +1,8 @@
 package com.a.a.a.mymvvm;
 
 import android.app.Application;
+import android.content.Context;
+import android.support.multidex.MultiDex;
 
 /**
  * Created by Administrator on 2019/7/23 0023.
@@ -16,5 +18,10 @@ public class MyApplication extends Application{
         //....
         //初始化组件(靠后)
         ModuleLifecycleConfig.getInstance().initModuleLow(this);
+    }
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(base);
     }
 }

@@ -2,7 +2,7 @@ apply from: "../../module.build.gradle"
 android {
     defaultConfig {
         if (isBuildModule.toBoolean()) {
-            applicationId "com.login"
+            applicationId "com.hfive"
         }
     }
 

@@ -1,1 +1,1 @@
-include ':app', ':library-base', ':moduleCore:module-main', ':moduleCore:module-login'
+include ':app', ':library-base', ':moduleCore:module-main', ':moduleCore:module-login', ':moduleCore:module-hfive'
