@@ -19,7 +19,7 @@ import java.lang.reflect.Type;
  * Created by Administrator on 2019/7/16 0016.
  */
 
-public abstract class BaseActivity<V extends ViewDataBinding,VM extends   BaseViewModel> extends AppCompatActivity {
+public abstract class  BaseActivity<V extends ViewDataBinding,VM extends   BaseViewModel> extends AppCompatActivity {
 
     protected abstract int initContentView();
     protected abstract void initView(Bundle savedInstanceState);

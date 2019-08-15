@@ -26,7 +26,7 @@ public class SplashActivity extends BaseActivity<ActivitySplasBinding,SplashView
         mBinding.text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ARouter.getInstance().build(RouterPath.Hfive.Hfive).withString("url", "https://www.baidu.com").navigation();
+                ARouter.getInstance().build(RouterPath.Main.MAIN).navigation();
                 finish();
             }
         });

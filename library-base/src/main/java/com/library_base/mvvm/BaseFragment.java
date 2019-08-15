@@ -8,6 +8,7 @@ import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +30,8 @@ public abstract class BaseFragment<V extends ViewDataBinding,VM extends  BaseVie
 
     protected V mBinding;
     protected VM mViewModel;
+    private boolean isViewCreate=false;//判断 view 是否可见
+    private boolean currentVisibleState=false;//判断 当前节目是否可见
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,17 +42,23 @@ public abstract class BaseFragment<V extends ViewDataBinding,VM extends  BaseVie
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-        mBinding = DataBindingUtil.inflate(inflater, initContentView(), container, false);
+        if(mBinding==null){
+            mBinding = DataBindingUtil.inflate(inflater, initContentView(), container, false);
+        }
+        isViewCreate=true;
+        if(getUserVisibleHint() && !isHidden()){
+            dispatchUserVisibleHint(true);
+        }
+        Log.e("frag","onCreateView");
         return mBinding.getRoot();
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         initView(savedInstanceState);
         ARouter.getInstance().inject(this);
+
     }
     /**
      * 注入绑定
@@ -96,5 +105,69 @@ public abstract class BaseFragment<V extends ViewDataBinding,VM extends  BaseVie
         if(mBinding != null){
             mBinding.unbind();
         }
+        isViewCreate=false;
+        currentVisibleState=false;
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.e("frag","onResume");
+        if(!isHidden() && !currentVisibleState && getUserVisibleHint()){
+            dispatchUserVisibleHint(true);
+        }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        Log.e("frag","onPause");
+        if(currentVisibleState && getUserVisibleHint()){
+            dispatchUserVisibleHint(false);
+        }
+    }
+
+
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        dispatchUserVisibleHint(!hidden);
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        Log.e("frag","setUserVisibleHint"+"   "+isVisibleToUser);
+        if(isViewCreate){
+            if(isVisibleToUser && !currentVisibleState){
+                dispatchUserVisibleHint(true);
+            }else if(!isVisibleToUser && currentVisibleState){
+                dispatchUserVisibleHint(false);
+            }
+        }
+    }
+
+    public void dispatchUserVisibleHint(boolean is){
+        if(currentVisibleState == is){
+            return;
+        }
+        currentVisibleState=is;
+        if(is){
+            onFragmentResume();
+        }else{
+            onFragmentPause();
+        }
+    }
+
+    public void onFragmentResume(){
+        Log.e("frag","resume");
+
+    }
+
+    public void onFragmentPause(){
+        Log.e("frag","Pause");
+
     }
 }
