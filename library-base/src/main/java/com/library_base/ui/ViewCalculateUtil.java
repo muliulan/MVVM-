@@ -17,7 +17,7 @@ import android.widget.TextView;
 
 public class ViewCalculateUtil {
 
-    public static void setViewLayoutParam(View view, int width, int height, int topMargin, int bottomMargin, int lefMargin, int rightMargin){
+    public static void setViewRelativeLayoutParam(View view, int width, int height, int topMargin, int bottomMargin, int lefMargin, int rightMargin){
         RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) view.getLayoutParams();
 
         if (layoutParams != null) {
@@ -53,30 +53,6 @@ public class ViewCalculateUtil {
         view.setTextSize(TypedValue.COMPLEX_UNIT_PX, UiUtils.getUiUtils().getHeight(size));
     }
 
-    public static void setViewLinearLayoutParam(View view, int width, int height)
-    {
-
-        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) view.getLayoutParams();
-        if (width != RelativeLayout.LayoutParams.MATCH_PARENT && width != RelativeLayout.LayoutParams.WRAP_CONTENT && width != RelativeLayout.LayoutParams.FILL_PARENT)
-        {
-            layoutParams.width = UiUtils.getUiUtils( ).getWidth(width);
-        }
-        else
-        {
-            layoutParams.width = width;
-        }
-        if (height != RelativeLayout.LayoutParams.MATCH_PARENT && height != RelativeLayout.LayoutParams.WRAP_CONTENT && height != RelativeLayout.LayoutParams.FILL_PARENT)
-        {
-            layoutParams.height = UiUtils.getUiUtils( ).getHeight(height);
-        }
-        else
-        {
-            layoutParams.height = height;
-        }
-
-        view.setLayoutParams(layoutParams);
-    }
-
     public static void setViewGroupLayoutParam(View view, int width, int height)
     {
 
@@ -99,7 +75,27 @@ public class ViewCalculateUtil {
         }
         view.setLayoutParams(layoutParams);
     }
+    public static void setViewLinearLayoutParam(View view, int width, int height){
+        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) view.getLayoutParams();
+        if (width != RelativeLayout.LayoutParams.MATCH_PARENT && width != RelativeLayout.LayoutParams.WRAP_CONTENT && width != RelativeLayout.LayoutParams.FILL_PARENT)
+        {
+            layoutParams.width = UiUtils.getUiUtils( ).getWidth(width);
+        }
+        else
+        {
+            layoutParams.width = width;
+        }
+        if (height != RelativeLayout.LayoutParams.MATCH_PARENT && height != RelativeLayout.LayoutParams.WRAP_CONTENT && height != RelativeLayout.LayoutParams.FILL_PARENT)
+        {
+            layoutParams.height = UiUtils.getUiUtils( ).getHeight(height);
+        }
+        else
+        {
+            layoutParams.height = height;
+        }
 
+        view.setLayoutParams(layoutParams);
+    }
     /**
      * 设置LinearLayout中 view的高度宽度
      *
@@ -107,10 +103,7 @@ public class ViewCalculateUtil {
      * @param width
      * @param height
      */
-    public static void setViewLinearLayoutParam(View view, int width, int height, int topMargin, int bottomMargin, int lefMargin,
-                                                int rightMargin)
-    {
-
+    public static void setViewLinearLayoutParam(View view, int width, int height, int topMargin, int bottomMargin, int lefMargin, int rightMargin)  {
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) view.getLayoutParams();
         if (width != RelativeLayout.LayoutParams.MATCH_PARENT && width != RelativeLayout.LayoutParams.WRAP_CONTENT && width != RelativeLayout.LayoutParams.FILL_PARENT)
         {
