@@ -84,6 +84,8 @@ public abstract class BaseViewModel<M extends BaseModel> extends AndroidViewMode
             mModel=null;
         }if(mActivity!=null){
             mActivity=null;
+        }if(mLivedata!=null){
+            mLivedata=null;
         }
     }
 }

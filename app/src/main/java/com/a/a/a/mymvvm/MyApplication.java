@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
 
+import com.library_base.ui.UiUtils;
+
 /**
  * Created by Administrator on 2019/7/23 0023.
  */
@@ -18,6 +20,8 @@ public class MyApplication extends Application{
         //....
         //初始化组件(靠后)
         ModuleLifecycleConfig.getInstance().initModuleLow(this);
+
+        UiUtils.getUiUtils(this);
     }
     @Override
     protected void attachBaseContext(Context base) {
