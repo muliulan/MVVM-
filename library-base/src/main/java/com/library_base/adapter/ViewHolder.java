@@ -9,8 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-
 /**
  * Created by Administrator on 2019/5/13 0013.
  */
@@ -69,16 +67,16 @@ public class ViewHolder extends RecyclerView.ViewHolder{
         view.setImageResource(resId);
         return this;
     }
-    public ViewHolder setIamgeBackground(int viewId,String url){
-        ImageView view = getView(viewId);
-//        .placeholder(R.mipmap.def_loading_avatar).error(R.mipmap.def_loading_avatar)
-        Glide.with(view.getContext()).load(url).asBitmap().into(view);
-        return this;
-    }
-    public ViewHolder setIamgeBackground(ImageView view,String url){
-        Glide.with(view.getContext()).load(url).asBitmap().into(view);
-        return this;
-    }
+//    public ViewHolder setIamgeBackground(int viewId,String url){
+//        ImageView view = getView(viewId);
+////        .placeholder(R.mipmap.def_loading_avatar).error(R.mipmap.def_loading_avatar)
+//        Glide.with(view.getContext()).load(url).asBitmap().into(view);
+//        return this;
+//    }
+//    public ViewHolder setIamgeBackground(ImageView view,String url){
+//        Glide.with(view.getContext()).load(url).asBitmap().into(view);
+//        return this;
+//    }
 
 
 //    /** 图片 高斯模糊

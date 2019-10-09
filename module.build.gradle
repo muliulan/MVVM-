@@ -11,6 +11,9 @@ android {
     defaultConfig {
         minSdkVersion       rootProject.ext.android.minSdkVersion
         targetSdkVersion    rootProject.ext.android.targetSdkVersion
+        if(isBuildModule){
+            applicationId rootProject.ext.android.applicationId
+        }
         versionCode         rootProject.ext.android.versionCode
         versionName         rootProject.ext.android.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"

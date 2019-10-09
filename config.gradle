@@ -1,5 +1,7 @@
 ext{
-    lifecycle_version = '2.0.0'
+//    isBuildModule 为 true 时可以使每个组件独立运行, false 则可以将所有组件集成到宿主 App 中
+    isBuildModule=false
+//    lifecycle_version = '2.0.0'
     android = [
             compileSdkVersion   : 27,
             buildToolsVersion   : "27.0.2",
@@ -31,8 +33,9 @@ ext{
     ]
 
     dependencies = [
-            //图片加载
-            'glide'                   : 'com.github.bumptech.glide:glide:3.7.0',
+            //glide 'com.github.bumptech.glide:glide:3.7.0'
+            //图片加载(带有特效)
+            'glide'                   : 'jp.wasabeef:glide-transformations:3.0.1',
             //view
             'flycotablayout'          : 'com.nineoldandroids:library:2.4.0',
             'flycoroundview_lib'      : 'com.flyco.roundview:FlycoRoundView_Lib:1.1.2@aar',

@@ -85,8 +85,10 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':moduleCore:module-main')
-    implementation project(':moduleCore:module-login')
     compile rootProject.ext.support["multidex"]
-    implementation project(':moduleCore:module-hfive')
+
+        implementation project(':moduleCore:module-main')
+        implementation project(':moduleCore:module-login')
+        implementation project(':moduleCore:module-hfive')
+
 }

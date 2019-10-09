@@ -3,8 +3,6 @@ package com.module_main.v;
 import android.os.Bundle;
 import android.view.View;
 
-import com.alibaba.android.arouter.launcher.ARouter;
-import com.library_base.arouter.RouterPath;
 import com.library_base.mvvm.BaseActivity;
 import com.module_main.R;
 import com.module_main.databinding.ActivitySplasBinding;
@@ -26,7 +24,7 @@ public class SplashActivity extends BaseActivity<ActivitySplasBinding,SplashView
         mBinding.text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ARouter.getInstance().build(RouterPath.Main.MAIN).navigation();
+
                 finish();
             }
         });
@@ -36,5 +34,11 @@ public class SplashActivity extends BaseActivity<ActivitySplasBinding,SplashView
     @Override
     protected void data(Object data) {
 
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
     }
 }
