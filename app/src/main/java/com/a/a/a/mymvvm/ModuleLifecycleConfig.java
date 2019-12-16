@@ -11,7 +11,7 @@ import com.library_base.IModuleInit;
  */
 
 public class ModuleLifecycleConfig {
-    //内部类，在装载该内部类时才会去创建单例对象
+    //内部类，在装载该内部类时才会去创建单例对象11
     private static class SingletonHolder {
         public static ModuleLifecycleConfig instance = new ModuleLifecycleConfig();
     }
